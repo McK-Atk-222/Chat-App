@@ -8,17 +8,17 @@ export const signup = async (req: Request, res: Response) => {
         const { fullName, username, password, confirmPassword, gender } = req.body
         
         if (!fullName || !username || !password || !confirmPassword || !gender) {
-            return res.status(400).json({ error: "Please fill in all fields" });
+            res.status(400).json({ error: "Please fill in all fields" });
         }
 
         if (password !== confirmPassword) {
-            return res.status(400).json({ error: "Passwords don't match" });
+            res.status(400).json({ error: "Passwords don't match" });
         }
 
     const user = await prisma.user.findUnique({ where: { username } });
 
     if (user) {
-        return res.status(400).json({ error: "Username already exists" });
+        res.status(400).json({ error: "Username already exists" });
     }
 
     const salt = await bcryptjs.genSalt(10);
@@ -62,13 +62,13 @@ export const login = async (req: Request, res: Response) => {
         const user = await prisma.user.findUnique({where: {username}});
 
         if(!user){
-            return res.status(400).json({error: "Invalid Credentials"});
+            res.status(400).json({error: "Invalid Credentials"});
         };
 
         const isPasswordCorrect = await bcryptjs.compare(password, user.password);
 
         if(!isPasswordCorrect){
-            return res.status(400).json({error: "Invalid Credentials"});
+            res.status(400).json({error: "Invalid Credentials"});
         };
 
         generateToken(user.id, res);
@@ -101,7 +101,7 @@ export const getMe = async (req: Request, res: Response) => {
         const user = await prisma.user.findUnique({where:{id:req.user.id}});
 
         if(!user) {
-            return res.status(404).json({error: "User not found"});
+            res.status(404).json({error: "User not found"});
         }
 
         res.status(200).json({
