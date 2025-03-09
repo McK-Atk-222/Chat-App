@@ -4,7 +4,7 @@ const GenderCheckbox = ( {
     onCheckboxChange,
 
 }: {
-    selectedGender: string[];
+    selectedGender: string;
     onCheckboxChange: (gender: "male" | "female") => void;
 }) => {
     return (
