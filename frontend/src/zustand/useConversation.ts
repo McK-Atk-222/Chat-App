@@ -1,7 +1,7 @@
 import { Message } from 'postcss';
 import {create} from 'zustand';
 
-type ConversationType = {
+export type ConversationType = {
   id: string;
   fullName: string;
   profilePic: string;
