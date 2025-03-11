@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { ConversationType } from "../src/zustand/useConversation"
+import { ConversationType } from "../zustand/useConversation"
 import toast from "react-hot-toast";
 
 const useGetConverstations = () => {
