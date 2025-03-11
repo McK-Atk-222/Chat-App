@@ -21,7 +21,7 @@ model User {
     gender Gender
     profilePic String
     createdAt DateTime @default(now())
-    updatedAt DateTime
+    updatedAt DateTime @updatedAt
     conversationsIds String[]
 
     conversations Conversation[]
@@ -31,7 +31,7 @@ model User {
 model Conversation{
     id String @id @default (cuid())
     createdAt DateTime @default(now())
-    updatedAt DateTime
+    updatedAt DateTime @updatedAt
 
     participantIds String[]
     participants User[]
