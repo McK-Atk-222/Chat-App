@@ -1,5 +1,5 @@
-import GenderCheckbox from "../../../components/GenderCheckbox";
-import useSignup from "../../../hooks/useSignup"
+import GenderCheckbox from "../../components/GenderCheckbox";
+import useSignup from "../../hooks/useSignup"
 import { useState } from "react";
 
 const SignUp = () => {
