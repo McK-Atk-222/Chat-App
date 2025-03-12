@@ -13,14 +13,17 @@ A simple PERN-stack web application which allows registered users to send messag
 
 ## Installation
 
-Clone the repository, set up your .env file, and build the app.
+Clone the repository, set up your .env file in root, and build the app.
 ```sh
 git clone https://github.com/McK-Atk-222/Chat-App.git
 ```
 
 ```sh
-cd ./frontend
 npm run build
+```
+
+```sh
+npm run start
 ```
 
 ## Usage
