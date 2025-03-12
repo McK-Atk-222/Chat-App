@@ -57,7 +57,7 @@ const SignUp = () => {
         />
       </div>
       <div>
-        <label className='label'>
+        <label className='label p-2'>
 							<span className='text-base label-text'>Password</span>
 			  </label>
         <input 
@@ -69,7 +69,7 @@ const SignUp = () => {
         />
       </div>
       <div>
-        <label className='label'>
+        <label className='label p-2'>
 							<span className='text-base label-text'>Confirm Password</span>
 			  </label>
         <input 
@@ -80,17 +80,19 @@ const SignUp = () => {
           onChange={(e) => setInputs({...inputs, confirmPassword: e.target.value })}
         />
       </div>
-
+    <div className="p-2">
     <GenderCheckbox 
       selectedGender={inputs.gender}
       onCheckboxChange={handleCheckboxChange}
     />
-
+    </div>
+    <div>
     <Link
 			to={"/login"}
 			className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block text-white'>
 						Already have an account?
 		</Link>
+    </div>
 
     <div>
       <button className='btn btn-block btn-sm mt-2 border border-slate-700' disabled={loading}>
