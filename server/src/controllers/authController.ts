@@ -62,7 +62,7 @@ export const login = async (req: Request, res: Response) => {
         const user = await prisma.user.findUnique({where: {username}});
 
         if(!user){
-            res.status(400).json({error: "Invalid Credentials"});
+            return res.status(400).json({error: "Invalid Credentials"});
         };
 
         const isPasswordCorrect = await bcryptjs.compare(password, user.password);
@@ -101,7 +101,7 @@ export const getMe = async (req: Request, res: Response) => {
         const user = await prisma.user.findUnique({where:{id:req.user.id}});
 
         if(!user) {
-            res.status(404).json({error: "User not found"});
+            return res.status(404).json({error: "User not found"});
         }
 
         res.status(200).json({

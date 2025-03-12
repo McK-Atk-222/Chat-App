@@ -1,7 +1,7 @@
 import Conversation from "./conversation.tsx";
 import useGetConversations from "../../hooks/useGetConversations";
 
-const Conversation = () => {
+const Conversations = () => {
 
     const {conversations,loading}= useGetConversations();
 
@@ -16,4 +16,4 @@ const Conversation = () => {
         </div>
     );
 };
-export default Conversation;
+export default Conversations;

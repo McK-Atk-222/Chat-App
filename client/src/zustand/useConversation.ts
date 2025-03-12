@@ -1,4 +1,3 @@
-import { Message } from 'postcss';
 import {create} from 'zustand';
 
 export type ConversationType = {
@@ -16,15 +15,15 @@ export type MessageType = {
 }
 
 interface ConversationState {
-  selectConversation: ConversationType | null;
+  selectedConversation: ConversationType | null;
   messages: MessageType[];
   setSelectedConversation: (conversation: ConversationType|null) => void;
   setMessages: (messages: MessageType[]) => void;
 }
 
 const useConversation = create<ConversationState>((set) => ({
-selectConversation: null,
-setSelectedConversation: (conversation) => set({selectConversation: conversation}),
+selectedConversation: null,
+setSelectedConversation: (conversation) => set({selectedConversation: conversation}),
 messages: [],
 setMessages: (messages) => set({messages: messages}),
 }));
