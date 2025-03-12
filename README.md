@@ -24,6 +24,7 @@ npm run build
 ## Usage
 
 Chat App is a web application which is used for sending instant messages to other users.
+Deployed URL: https://chat-app-t1am.onrender.com
 
 ## Support
 
