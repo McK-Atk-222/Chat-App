@@ -2,9 +2,7 @@ import { LogOut } from "lucide-react";
 import useLogout from "../../hooks/useLogout"
 
 const LogoutButton = () => {
-    const logout = () => {
-        useLogout();
-    };
+    const {logout} = useLogout();
 
     return(
         <div className='mt-auto'>

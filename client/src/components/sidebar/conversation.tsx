@@ -15,10 +15,11 @@ const Conversation = ({ conversation }: { conversation: ConversationType}) => {
 				 py-1 cursor-pointer ${isSelected ? "bg-violet-500" : ""}`}
 				onClick={() => setSelectedConversation(conversation)}
 			>
-				<div className={`avatar ${isOnline ? "online" : ""}`}>
-					<div className='w-8 md:w-12 rounded-full'>
-						<img src={conversation.profilePic} alt='user avatar' />
-					</div>
+				<div className="relative">
+    				<img className="w-10 h-10 rounded-full" src={conversation.profilePic} alt=""/>
+						{isOnline && (
+						<span className="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+						)}
 				</div>
 
 				<div className='flex flex-col flex-1'>
