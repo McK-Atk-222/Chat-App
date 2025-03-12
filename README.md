@@ -19,6 +19,12 @@ git clone https://github.com/McK-Atk-222/Chat-App.git
 ```
 
 ```sh
+DATABASE_URL=""
+JWT_SECRET=""
+NODE_ENV="" //production or development
+PORT=5001
+
+```sh
 npm run build
 ```
 
