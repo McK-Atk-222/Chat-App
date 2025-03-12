@@ -1,6 +1,9 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
 import prisma from "../db/prisma.js";
+import dotenv from "dotenv"
+
+dotenv.config();
 
 interface DecodedToken extends JwtPayload {
     userId: string;
@@ -21,20 +24,20 @@ const protectRoute = async (req: Request, res: Response, next: NextFunction) => 
         const token = req.cookies.jwt;
 
         if(!token) {
-           res.status(401).json({ error: "Unauthorized - No token provided"});
+           return res.status(401).json({ error: "Unauthorized - No token provided"});
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECTRET!) as DecodedToken;
+        const decoded = jwt.verify(token, process.env.JWT_SECRET!) as DecodedToken;
         
         if(!decoded) {
-           res.status(401).json({ error: "Unauthorized - Invalid Token" });
+           return res.status(401).json({ error: "Unauthorized - Invalid Token" });
         }
 
         const user = await prisma.user.findUnique({where: { id: decoded.userId}, select: { id: true, username: true,
              fullName: true, profilePic: true}});
 
         if (!user) {
-           res.status(404).json({ error: "User not found"});
+           return res.status(404).json({ error: "User not found"});
         }   
         
         req.user = user;
