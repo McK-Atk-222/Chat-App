@@ -23,6 +23,7 @@ DATABASE_URL=""
 JWT_SECRET=""
 NODE_ENV="" //production or development
 PORT=5001
+```
 
 ```sh
 npm run build
