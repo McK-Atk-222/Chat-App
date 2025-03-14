@@ -44,7 +44,7 @@ Testing can be preformed on the deployed webpage by creating an account in a bro
 
 ## Technologies
 
-HTML, CSS, TypeScript, JavaScript, PostgreSQL, Express.js, Prisma, Node.js, React, Socket.io, TailwindCSS, daisyUI, Prisma, Zanstand, Toast
+HTML, CSS, TypeScript, JavaScript, PostgreSQL, Express.js, Prisma, Node.js, React, Socket.io, TailwindCSS, daisyUI, Zanstand, Toast
 
 ## Support
 
