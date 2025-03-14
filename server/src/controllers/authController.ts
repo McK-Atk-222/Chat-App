@@ -8,17 +8,17 @@ export const signup = async (req: Request, res: Response) => {
         const { fullName, username, password, confirmPassword, gender } = req.body
         
         if (!fullName || !username || !password || !confirmPassword || !gender) {
-            res.status(400).json({ error: "Please fill in all fields" });
+           return res.status(400).json({ error: "Please fill in all fields" });
         }
 
         if (password !== confirmPassword) {
-            res.status(400).json({ error: "Passwords don't match" });
+            return res.status(400).json({ error: "Passwords don't match" });
         }
 
     const user = await prisma.user.findUnique({ where: { username } });
 
     if (user) {
-        res.status(400).json({ error: "Username already exists" });
+        return res.status(400).json({ error: "Username already exists" });
     }
 
     const salt = await bcryptjs.genSalt(10);

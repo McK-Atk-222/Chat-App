@@ -37,6 +37,7 @@ const SignUp = () => {
           <span className='text-base label-text'>Full Name</span>
         </label>
         <input 
+          required
           type='text'
           placeholder='ex. John Doe'
           className='w-full input input-bordered  h-10'
@@ -49,6 +50,7 @@ const SignUp = () => {
 							<span className='text-base label-text'>Username</span>
 			  </label>
         <input 
+          required
           type='text'
           placeholder='ex. johndoe'
           className='w-full input input-bordered h-10'
@@ -61,6 +63,7 @@ const SignUp = () => {
 							<span className='text-base label-text'>Password</span>
 			  </label>
         <input 
+        required
           type='password'
           placeholder='Enter Password'
           className='w-full input input-bordered h-10'
@@ -73,6 +76,7 @@ const SignUp = () => {
 							<span className='text-base label-text'>Confirm Password</span>
 			  </label>
         <input 
+        required
           type='password'
           placeholder='Confirm Password'
           className='w-full input input-bordered h-10'
